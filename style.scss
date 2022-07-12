@@ -3,7 +3,7 @@
     height: 20rem;
     border: .25rem solid black;
     margin: auto;
-}
+
 
 #player{
     width: 3rem;
@@ -21,17 +21,41 @@
 
 @keyframes jump{
     0%{top: 17rem;}
-    15%{top: 14rem;}
+    15%{top: 13rem;}
     25%{top: 10rem;}
-    45%{top: 6.5rem;}
-    60%{top: 9.5rem;}
-    75%{top: 11.5rem;}
-    85%{top: 14rem;}
+    40%{top: 6rem;}
+    60%{top: 8rem;}
+    75%{top: 11rem;}
+    85%{top: 15rem;}
     100%{top: 17rem;}
 
 } 
 
 .animateJump{
-    animation: jump 500ms linear;
+    animation: jump 750ms linear;
     
+}
+
+#obstacle{
+    width: 2rem;
+    height: 5rem;
+    background-color: red;
+
+    position: relative;
+    left: 47.5rem;
+    top: 12rem;
+
+    animation: moveObstacle 2.5s linear infinite;
+}
+
+@keyframes moveObstacle{
+    0%{left: 50rem;}
+    100%{left: 0rem;}
+}
+
+
+
+
+
+
 }
