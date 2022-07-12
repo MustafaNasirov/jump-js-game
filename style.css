@@ -9,7 +9,7 @@
   height: 3rem;
   background-color: black;
   position: relative;
-  left: 4rem;
+  left: 3rem;
   top: 17rem;
 }
 @-webkit-keyframes jump {
@@ -26,13 +26,13 @@
     top: 6rem;
   }
   60% {
-    top: 8rem;
+    top: 7rem;
   }
   75% {
-    top: 11rem;
+    top: 9rem;
   }
   85% {
-    top: 15rem;
+    top: 12rem;
   }
   100% {
     top: 17rem;
@@ -52,13 +52,13 @@
     top: 6rem;
   }
   60% {
-    top: 8rem;
+    top: 7rem;
   }
   75% {
-    top: 11rem;
+    top: 9rem;
   }
   85% {
-    top: 15rem;
+    top: 12rem;
   }
   100% {
     top: 17rem;
