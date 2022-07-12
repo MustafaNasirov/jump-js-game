@@ -1,0 +1,73 @@
+.game-container {
+  width: 50rem;
+  height: 20rem;
+  border: 0.25rem solid black;
+  margin: auto;
+}
+
+#player {
+  width: 3rem;
+  height: 3rem;
+  background-color: black;
+  position: relative;
+  left: 4rem;
+  top: 17rem;
+}
+
+@-webkit-keyframes jump {
+  0% {
+    top: 17rem;
+  }
+  15% {
+    top: 14rem;
+  }
+  25% {
+    top: 10rem;
+  }
+  45% {
+    top: 6.5rem;
+  }
+  60% {
+    top: 9.5rem;
+  }
+  75% {
+    top: 11.5rem;
+  }
+  85% {
+    top: 14rem;
+  }
+  100% {
+    top: 17rem;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 17rem;
+  }
+  15% {
+    top: 14rem;
+  }
+  25% {
+    top: 10rem;
+  }
+  45% {
+    top: 6.5rem;
+  }
+  60% {
+    top: 9.5rem;
+  }
+  75% {
+    top: 11.5rem;
+  }
+  85% {
+    top: 14rem;
+  }
+  100% {
+    top: 17rem;
+  }
+}
+.animateJump {
+  -webkit-animation: jump 500ms linear;
+          animation: jump 500ms linear;
+}/*# sourceMappingURL=style.css.map */
