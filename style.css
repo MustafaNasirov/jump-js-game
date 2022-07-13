@@ -1,11 +1,12 @@
 body {
   background-color: dimgray;
+  width: 100vw;
+  height: 100vh;
 }
 body .game-container {
   width: 50rem;
   height: 20rem;
   border: 0.25rem solid black;
-  margin: auto;
   background-color: grey;
 }
 body .game-container #player {
@@ -144,10 +145,13 @@ body .game-container .animatePlayerLeft {
 #tutorial-screen {
   background-color: black;
   border: 0.5rem solid white;
-  position: relative;
-  margin-top: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
   text-align: center;
   display: block;
+  width: 100vw;
+  height: 100vh;
 }
 #tutorial-screen #tutorial-screen__start {
   font-size: 3rem;

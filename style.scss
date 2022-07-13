@@ -2,12 +2,14 @@
 
 body{
 background-color:dimgray;
+width: 100vw;
+height: 100vh;
 
     .game-container{
     width: 50rem;
     height: 20rem;
     border: .25rem solid black;
-    margin: auto;
+
     background-color: grey;
 
         #player{
@@ -37,7 +39,6 @@ background-color:dimgray;
 
         .animateJump{
             animation: jump 750ms linear;
-            
         }
 
         #obstacle{
@@ -59,7 +60,6 @@ background-color:dimgray;
             animation: moveObstacle 2.5s linear infinite;
         }
 
-
         // Player Movement animations
         @keyframes movePlayerRight{
             0%{left: 3rem;}
@@ -78,8 +78,6 @@ background-color:dimgray;
         .animatePlayerLeft{
             animation: movePlayerLeft 150ms linear;
         }
-    
-
     }
     
     
@@ -88,10 +86,13 @@ background-color:dimgray;
 #tutorial-screen{
     background-color: black;
     border: .5rem solid white;
-    position: relative;
-    margin-top: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
     text-align: center;
     display: block;
+    width: 100vw;
+    height: 100vh;
 
         #tutorial-screen__start{
         font-size: 3rem;   
