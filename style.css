@@ -1,10 +1,14 @@
-.game-container {
+body {
+  background-color: dimgray;
+}
+body .game-container {
   width: 50rem;
   height: 20rem;
   border: 0.25rem solid black;
   margin: auto;
+  background-color: grey;
 }
-.game-container #player {
+body .game-container #player {
   width: 3rem;
   height: 3rem;
   background-color: black;
@@ -64,19 +68,17 @@
     top: 17rem;
   }
 }
-.game-container .animateJump {
+body .game-container .animateJump {
   -webkit-animation: jump 750ms linear;
           animation: jump 750ms linear;
 }
-.game-container #obstacle {
+body .game-container #obstacle {
   width: 2rem;
   height: 5rem;
   background-color: red;
   position: relative;
   left: 47.5rem;
   top: 12rem;
-  -webkit-animation: moveObstacle 2.5s linear infinite;
-          animation: moveObstacle 2.5s linear infinite;
 }
 @-webkit-keyframes moveObstacle {
   0% {
@@ -93,4 +95,64 @@
   100% {
     left: 0rem;
   }
+}
+body .game-container .moveObstacle {
+  -webkit-animation: moveObstacle 2.5s linear infinite;
+          animation: moveObstacle 2.5s linear infinite;
+}
+@-webkit-keyframes movePlayerRight {
+  0% {
+    left: 3rem;
+  }
+  100% {
+    left: playerLeft;
+  }
+}
+@keyframes movePlayerRight {
+  0% {
+    left: 3rem;
+  }
+  100% {
+    left: playerLeft;
+  }
+}
+body .game-container .animatePlayerRight {
+  -webkit-animation: movePlayerRight 150ms linear;
+          animation: movePlayerRight 150ms linear;
+}
+@-webkit-keyframes movePlayerLeft {
+  0% {
+    left: 6rem;
+  }
+  100% {
+    left: 3rem;
+  }
+}
+@keyframes movePlayerLeft {
+  0% {
+    left: 6rem;
+  }
+  100% {
+    left: 3rem;
+  }
+}
+body .game-container .animatePlayerLeft {
+  -webkit-animation: movePlayerLeft 150ms linear;
+          animation: movePlayerLeft 150ms linear;
+}
+
+#tutorial-screen {
+  background-color: black;
+  border: 0.5rem solid white;
+  position: relative;
+  margin-top: 1rem;
+  text-align: center;
+  display: block;
+}
+#tutorial-screen #tutorial-screen__start {
+  font-size: 3rem;
+  color: green;
+}
+#tutorial-screen #tutorial-screen__controls {
+  color: green;
 }/*# sourceMappingURL=style.css.map */
