@@ -22,7 +22,7 @@ body{
     }
 
     .tv-screen{
-        background-image: url("./images/old-tv-screen.png");
+        background-image: url("./assets/old-tv-screen.png");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -62,14 +62,10 @@ body{
                 display: none;
             }
 
-            
-    
             #player{
                 width: 3rem;
                 height: 3rem;
-                //background-color: black;
-
-                background-image: url("./images/mega-man.png");
+                background-image: url("./assets/mega-man.png");
                 background-position: center;
                 background-size: cover;
                 position: relative;
@@ -111,7 +107,6 @@ body{
 
             .moveObstacle{
                 animation: moveObstacle 2.5s linear infinite;
-                
             }
         }
         #game-floor{

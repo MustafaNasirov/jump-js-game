@@ -1,6 +1,7 @@
 // variable declarations
 var isGameStart = false;
 var gameScore = 0;
+var jumpSFX = new Audio("./assets/jump-sfx-8bit.mp3")
 
 // DOM declarations
 const player = document.getElementById("player");
@@ -34,6 +35,7 @@ const playerJump = () => {
         return;
     }
     // otherwise play animation
+    player.style.backgroundImage = "url('./assets/mega-man-jump.png')";
     player.classList.add("animateJump");
     setTimeout(removeJump, 750);
  };
@@ -41,6 +43,12 @@ const playerJump = () => {
  // Remove jump animation class
 const removeJump = () =>{
     player.classList.remove("animateJump");
+    player.style.backgroundImage = "url('./assets/mega-man.png')";
+};
+
+ // Remove obstacle animation class
+ const removeObstacle = () =>{
+    obstacle.classList.remove("moveObstacle");
 };
 
 // Checks for collisions every 5ms
@@ -60,6 +68,7 @@ const checkCollision = setInterval(() => {
        gameOver.style.display = "block";
        isGameStart = false;
        gameScore = 0;
+       removeObstacle();
     }
     
 }, 5);
@@ -103,16 +112,18 @@ const moveElement = (element, pixels) =>{
 }; 
 
 const updateScore = () => {
-    if(!isGameStart){
-        clearInterval(scoreInterval)
+    if(isGameStart == false){
+        window.clearInterval(scoreInterval)
         scoreInterval = 0;
         gameScore = 0;
     }
-    
-    var scoreInterval = setInterval(() => {
+    else{
+    const scoreInterval = setInterval(() => {
         gameScore += 1;
         scoreDisplay.innerText = "Score: " + gameScore;
+        console.log(scoreInterval)
     }, 2500)
+    }
     
 };
 
