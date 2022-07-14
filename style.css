@@ -56,14 +56,6 @@ body .tv-screen .game-container #game-over {
   z-index: 1;
   display: none;
 }
-body .tv-screen .game-container #game-floor {
-  background-color: grey;
-  z-index: -2;
-  width: 35rem;
-  height: 3rem;
-  margin-top: 12rem;
-  border-radius: 5rem;
-}
 body .tv-screen .game-container #player {
   width: 3rem;
   height: 3rem;
@@ -158,6 +150,16 @@ body .tv-screen .game-container #obstacle {
 body .tv-screen .game-container .moveObstacle {
   -webkit-animation: moveObstacle 2.5s linear infinite;
           animation: moveObstacle 2.5s linear infinite;
+}
+body .tv-screen #game-floor {
+  background-color: grey;
+  z-index: -2;
+  width: 32rem;
+  height: 3rem;
+  position: absolute;
+  left: 0.5rem;
+  margin-top: 12rem;
+  border-radius: 5rem;
 }
 body .tv-screen #tutorial-screen {
   background-color: black;

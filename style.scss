@@ -62,14 +62,7 @@ body{
                 display: none;
             }
 
-            #game-floor{
-                background-color: grey;
-                z-index:-2;
-                width: 35rem;
-                height: 3rem;
-                margin-top: 12rem;
-                border-radius: 5rem;
-            }
+            
     
             #player{
                 width: 3rem;
@@ -120,6 +113,16 @@ body{
                 animation: moveObstacle 2.5s linear infinite;
                 
             }
+        }
+        #game-floor{
+            background-color: grey;
+            z-index:-2;
+            width: 32rem;
+            height: 3rem;
+            position: absolute;
+            left: 0.5rem;
+            margin-top: 12rem;
+            border-radius: 5rem;
         }
 
         #tutorial-screen{

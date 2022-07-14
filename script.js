@@ -64,7 +64,6 @@ const checkCollision = setInterval(() => {
     
 }, 5);
 
-
 const handleKeyPress = (event) => {
     if(!isGameStart){ 
         setTimeout(() => { 
