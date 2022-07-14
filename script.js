@@ -1,29 +1,36 @@
 // variable declarations
 var isGameStart = false;
+var gameScore = 0;
 
 // DOM declarations
 const player = document.getElementById("player");
 const obstacle = document.getElementById("obstacle");
+const scoreDisplay = document.getElementById("game-score");
 //const floor = document.getElementById("floor");
 
 const tutorialScreen = document.getElementById("tutorial-screen");
 const gameScreen = document.getElementsByClassName("game-container");
+const gameOver = document.getElementById("game-over");
 
 const startGame = () => {
     isGameStart = true;
-    obstacle.classList.add("moveObstacle");
+    gameOver.style.display = "none";
+    console.log("started")
+    player.style.left = "5rem";
 
+    obstacle.classList.add("moveObstacle");
+    updateScore();
     hideTutorial();
 };
 
 const hideTutorial = () =>{
-    tutorialScreen.style.display = "none";
+    tutorialScreen.innerText = "";
 };
 
 // Animate player element to jump
 const playerJump = () => {
     // If player is already in jump animation (jump animation class is attached)
-    if(player.classList === true){
+    if(player.classList.contains("animateJump")){
         return;
     }
     // otherwise play animation
@@ -40,23 +47,31 @@ const removeJump = () =>{
 const checkCollision = setInterval(() => {
 
     // pixel position of player element 
-    let playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
-    let playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
+    const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
+    const playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
   
     // pixel position of obstacle element 
-    let obstacleTop = parseInt(window.getComputedStyle(obstacle).getPropertyValue("top"));
-    let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
+    const obstacleTop = parseInt(window.getComputedStyle(obstacle).getPropertyValue("top"));
+    const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
     
     // check if elements overlap (if player is inside obstacle there is a collision)
     if(((obstacleLeft < (playerLeft + 48)) && (obstacleLeft > playerLeft)) && ((playerTop) > obstacleTop)){
-        //alert("Game Over!");
+       // alert("Game Over!");
+       gameOver.style.display = "block";
+       isGameStart = false;
+       gameScore = 0;
     }
+    
 }, 5);
 
 
 const handleKeyPress = (event) => {
     if(!isGameStart){ 
-        startGame() };
+        setTimeout(() => { 
+            startGame(); 
+        }, "1000");
+        return;
+    }
 
     var key = event.key;
 
@@ -66,48 +81,43 @@ const handleKeyPress = (event) => {
     }
     else if (key == 'a') {
         //move left
-        moveElement(player, -10);
+        moveElement(player, -32);
     }
     else if (key == 'd') {
         // move right
-        moveElement(player, 10);
+        moveElement(player, 32);
     }
 };
 
 // Function to change position pixel value of element
 const moveElement = (element, pixels) =>{
-    let newVal = (parseInt(window.getComputedStyle(element).getPropertyValue("left"))) + pixels;
-    newVal = newVal.toString() + "px";
+    let newVal = (parseInt(window.getComputedStyle(element).getPropertyValue("left")));
 
+    if(newVal < 68){newVal = 68}        
+    if(newVal > 360){newVal = 360}
+
+    newVal = newVal + pixels;
+
+    newVal = newVal.toString() + "px";
     player.style.left = newVal;
     return newVal;
 }; 
 
-
-
-// Event listeners
-document.addEventListener('click', playerJump);
-document.addEventListener('keypress', (e) => {
-    handleKeyPress(e);
-});
-
-
-
-/* const removeMovement = () =>{
-    player.classList.remove("animatePlayerRight");
-    player.classList.remove("animatePlayerLeft");
-}
-
-const playerMovementRight = () => {
-
-    //player.style.left = "6rem"
-    player.classList.add("animatePlayerRight")
-    setTimeout(removeJump, 300);
+const updateScore = () => {
+    if(!isGameStart){
+        clearInterval(scoreInterval)
+        scoreInterval = 0;
+        gameScore = 0;
+    }
+    
+    var scoreInterval = setInterval(() => {
+        gameScore += 1;
+        scoreDisplay.innerText = "Score: " + gameScore;
+    }, 2500)
     
 };
 
-const playerMovementLeft = () => {
-
-    player.classList.add("animatePlayerLeft")
-    setTimeout(removeMovement, 300);
-};  */
+// Event listeners
+document.addEventListener('keypress', (e) => {
+    handleKeyPress(e);
+});

@@ -3,26 +3,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     
     <title>Jump Game</title>
 </head>
 <body>
-    
-    <div class="game-container">
-        <div id="player"></div>
-        <div id="obstacle"></div>
-        <div id="game-floor"></div>
+    <h1 id="game-title">Retro Chrome-Dino Game</h1>
+    <div class="tv-screen">
+        <div class="game-container">
+            <p id="game-score">Score: 0</p>
+            <p id="game-over">Game Over</p>
+            <div id="player"></div>
+            <div id="obstacle"></div>
+            <div id="game-floor"></div>
+        </div>
+
+        <div id="tutorial-screen">
+            <p id="tutorial-screen__start">Press any key to start</p>
+            <p id="tutorial-screen__controls">Space or W to Jump<br><br>A & D to move left and right</p>
+        </div>
     </div>
 
-
-
-    
-    <div id="tutorial-screen">
-        <h3 id="tutorial-screen__start">Press any key to start</h3>
-        <p id="tutorial-screen__controls">Space or Click to Jump</p>
-        <p id="tutorial-screen__controls">A & D to move left and right</p>
-    </div>
+   
 
 </body>
 <script src="./script.js"></script>
