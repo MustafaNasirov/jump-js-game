@@ -1,6 +1,6 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -9,24 +9,39 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: -webkit-min-content;
+  grid-template-rows: min-content;
+  padding: 0rem;
   justify-items: center;
   text-align: center;
 }
-body #game-title {
-  border: 0.1rem solid white;
-  padding: 1rem;
+body .screen-container {
+  display: flex;
+  flex-direction: column;
+}
+body .screen-container #game-title {
+  padding: 2rem;
   color: green;
   font-family: "Press Start 2P", cursive;
+  border: 0.5rem solid white;
 }
-body .tv-screen {
+body .screen-container #game-score {
+  color: green;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  position: relative;
+  padding: 1rem 0.1rem;
+  border: solid 0.1rem white;
+}
+body .screen-container .tv-screen {
   background-image: url("./assets/old-tv-screen.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
-body .tv-screen .game-container {
+body .screen-container .tv-screen .game-container {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -39,14 +54,7 @@ body .tv-screen .game-container {
   position: relative;
   z-index: -3;
 }
-body .tv-screen .game-container #game-score {
-  color: green;
-  font-family: "Press Start 2P", cursive;
-  font-size: 1rem;
-  position: relative;
-  bottom: 1rem;
-}
-body .tv-screen .game-container #game-over {
+body .screen-container .tv-screen .game-container #game-over {
   color: red;
   font-family: "Press Start 2P", cursive;
   font-size: 5rem;
@@ -56,7 +64,7 @@ body .tv-screen .game-container #game-over {
   z-index: 1;
   display: none;
 }
-body .tv-screen .game-container #player {
+body .screen-container .tv-screen .game-container #player {
   width: 3rem;
   height: 3rem;
   background-image: url("./assets/mega-man.png");
@@ -119,11 +127,11 @@ body .tv-screen .game-container #player {
     top: 17rem;
   }
 }
-body .tv-screen .game-container .animateJump {
+body .screen-container .tv-screen .game-container .animateJump {
   -webkit-animation: jump 750ms linear;
           animation: jump 750ms linear;
 }
-body .tv-screen .game-container #obstacle {
+body .screen-container .tv-screen .game-container #obstacle {
   width: 2rem;
   height: 5rem;
   background-color: green;
@@ -147,11 +155,11 @@ body .tv-screen .game-container #obstacle {
     left: 1%;
   }
 }
-body .tv-screen .game-container .moveObstacle {
+body .screen-container .tv-screen .game-container .moveObstacle {
   -webkit-animation: moveObstacle 2.5s linear infinite;
           animation: moveObstacle 2.5s linear infinite;
 }
-body .tv-screen #game-floor {
+body .screen-container .tv-screen #game-floor {
   background-color: grey;
   z-index: -2;
   width: 32rem;
@@ -161,7 +169,7 @@ body .tv-screen #game-floor {
   margin-top: 12rem;
   border-radius: 5rem;
 }
-body .tv-screen #tutorial-screen {
+body .screen-container .tv-screen #tutorial-screen {
   background-color: black;
   position: relative;
   text-align: center;
@@ -172,16 +180,35 @@ body .tv-screen #tutorial-screen {
   color: green;
   font-family: "Press Start 2P", cursive;
 }
-body .tv-screen #tutorial-screen #tutorial-screen__start {
+body .screen-container .tv-screen #tutorial-screen #tutorial-screen__start {
   position: absolute;
   padding-bottom: 2rem;
   font-size: 1rem;
   bottom: 15rem;
   right: 10rem;
 }
-body .tv-screen #tutorial-screen #tutorial-screen__controls {
+body .screen-container .tv-screen #tutorial-screen #tutorial-screen__controls {
   position: absolute;
   font-size: 0.5rem;
   bottom: 12rem;
   right: 14rem;
+}
+
+@media only screen and (max-width: 368px) {
+  #game-title {
+    width: 55%;
+    font-size: 0.75rem;
+  }
+  #tv-screen {
+    width: 55%;
+  }
+  #tv-screen #game-container {
+    width: 55%;
+  }
+  #tv-screen #tutorial-screen {
+    width: 55% rem;
+  }
+  #tv-screen #game-floor {
+    width: 55%;
+  }
 }/*# sourceMappingURL=style.css.map */

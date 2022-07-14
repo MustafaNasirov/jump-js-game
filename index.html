@@ -4,24 +4,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <audio id="jump-sfx-8bit" src="./assets/jump-sfx-8bit.mp3"></audio>
     <link rel="stylesheet" href="./style.css">
     
     <title>Jump Game</title>
 </head>
 <body>
-    <h1 id="game-title">Retro Chrome-Dino Game</h1>
-    <div class="tv-screen">
-        <div class="game-container">
-            <p id="game-score">Score: 0</p>
-            <p id="game-over">Game Over</p>
-            <div id="player"></div>
-            <div id="obstacle"></div>
-            <div id="game-floor"></div>
-        </div>
+    <div class="screen-container">
+        <p id="game-title">Retro Chrome-Dino Game</p>
+        <p id="game-score">Score: 0</p>
+        <div class="tv-screen">
+            <div class="game-container">
+                <p id="game-over">Game Over</p>
+                <div id="player"></div>
+                <div id="obstacle"></div>
+                <div id="game-floor"></div>
+            </div>
 
-        <div id="tutorial-screen">
-            <p id="tutorial-screen__start">Press any key to start</p>
-            <p id="tutorial-screen__controls">Space or W to Jump<br><br>A & D to move left and right</p>
+            <div id="tutorial-screen">
+                <p id="tutorial-screen__start">Press any key to start</p>
+                <p id="tutorial-screen__controls">Space or W to Jump<br><br>A & D to move left and right</p>
+            </div>
         </div>
     </div>
 

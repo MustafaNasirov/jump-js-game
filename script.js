@@ -1,7 +1,7 @@
 // variable declarations
 var isGameStart = false;
 var gameScore = 0;
-var jumpSFX = new Audio("./assets/jump-sfx-8bit.mp3")
+var jumpSFX = document.getElementById("jump-sfx-8bit")
 
 // DOM declarations
 const player = document.getElementById("player");
@@ -37,6 +37,7 @@ const playerJump = () => {
     // otherwise play animation
     player.style.backgroundImage = "url('./assets/mega-man-jump.png')";
     player.classList.add("animateJump");
+    jumpSFX.play();
     setTimeout(removeJump, 750);
  };
 
