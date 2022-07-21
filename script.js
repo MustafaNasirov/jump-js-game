@@ -1,14 +1,13 @@
 // variable declarations
-var isGameStart = false;
-var gameScore = 0;
-var jumpSFX = document.getElementById("jump-sfx-8bit")
-let scoreInterval = 0;
+let isGameStart = false;
+let gameScore = 0;
+let scoreClock = 0;
+const jumpSFX = document.getElementById("jump-sfx-8bit")
 
 // DOM declarations
 const player = document.getElementById("player");
 const obstacle = document.getElementById("obstacle");
 const scoreDisplay = document.getElementById("game-score");
-
 const tutorialScreen = document.getElementById("tutorial-screen");
 const gameScreen = document.getElementsByClassName("game-container");
 const gameOver = document.getElementById("game-over");
@@ -67,7 +66,7 @@ const checkCollision = setInterval(() => {
        // Stop score counter and terminate game
        gameOver.style.display = "block";
        isGameStart = false;
-       stopClock();
+       stopClock(scoreClock);
        removeObstacle();
        // alert("Game Over!");
     }
