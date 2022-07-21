@@ -62,7 +62,7 @@ body{
                     font-family: $pixel-font;
                     font-size: 5rem;
                     position: absolute;
-                    top: 8rem;
+                    top: 6rem;
                     right: 6rem;
                     z-index: 1;
                     display: none;
@@ -121,7 +121,7 @@ body{
                 z-index:-2;
                 width: 32rem;
                 height: 3rem;
-                position: absolute;
+                position: relative;
                 left: 0.5rem;
                 margin-top: 12rem;
                 border-radius: 5rem;
@@ -157,26 +157,28 @@ body{
     }
 }
 
-@media only screen and (max-width: 368px){
-
+@media only screen and (max-width: 500px){
     #game-title{
         width: 55%;
         font-size: .75rem; 
     }
 
-    #tv-screen{
-        width: 55%; 
-
-        #game-container{
+    .tv-screen{
+        background-image: none;
+        width: 60%; 
+        
+        .game-container{
             width: 55%; 
-        }
+            display: block;
+        
 
         #tutorial-screen{
-            width: 55%rem; 
+            width: 55%; 
         }
 
         #game-floor{
             width: 55%; 
         }
+    }
     }
 }

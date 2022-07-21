@@ -2,28 +2,25 @@
 var isGameStart = false;
 var gameScore = 0;
 var jumpSFX = document.getElementById("jump-sfx-8bit")
+let scoreInterval = 0;
 
 // DOM declarations
 const player = document.getElementById("player");
 const obstacle = document.getElementById("obstacle");
 const scoreDisplay = document.getElementById("game-score");
-//const floor = document.getElementById("floor");
 
 const tutorialScreen = document.getElementById("tutorial-screen");
 const gameScreen = document.getElementsByClassName("game-container");
 const gameOver = document.getElementById("game-over");
 
+// Initialise game
 const startGame = () => {
-    isGameStart = true;
-    gameOver.style.display = "none";
-    console.log("started")
-    player.style.left = "5rem";
-
-    obstacle.classList.add("moveObstacle");
-    updateScore();
+    resetGame();
+    startClock();
     hideTutorial();
 };
 
+// Clear and hide tutorial screen
 const hideTutorial = () =>{
     tutorialScreen.innerText = "";
 };
@@ -65,11 +62,14 @@ const checkCollision = setInterval(() => {
     
     // check if elements overlap (if player is inside obstacle there is a collision)
     if(((obstacleLeft < (playerLeft + 48)) && (obstacleLeft > playerLeft)) && ((playerTop) > obstacleTop)){
-       // alert("Game Over!");
+       
+
+       // Stop score counter and terminate game
        gameOver.style.display = "block";
        isGameStart = false;
-       gameScore = 0;
+       stopClock();
        removeObstacle();
+       // alert("Game Over!");
     }
     
 }, 5);
@@ -82,19 +82,22 @@ const handleKeyPress = (event) => {
         return;
     }
 
-    var key = event.key;
+    const key = event.key;
 
     if (key == 'w' || key == ' ') {
         //move up
         playerJump();
+        return;
     }
-    else if (key == 'a') {
+    if (key == 'a') {
         //move left
         moveElement(player, -32);
+        return;
     }
-    else if (key == 'd') {
+    if (key == 'd') {
         // move right
         moveElement(player, 32);
+        return;
     }
 };
 
@@ -112,20 +115,25 @@ const moveElement = (element, pixels) =>{
     return newVal;
 }; 
 
-const updateScore = () => {
-    if(isGameStart == false){
-        window.clearInterval(scoreInterval)
-        scoreInterval = 0;
-        gameScore = 0;
-    }
-    else{
-    const scoreInterval = setInterval(() => {
+// Starts timer to increment score
+const startClock = () => {scoreClock = setInterval(() => {
         gameScore += 1;
         scoreDisplay.innerText = "Score: " + gameScore;
-        console.log(scoreInterval)
-    }, 2500)
-    }
-    
+}, 2500)};
+
+// Stops timer for score
+const stopClock = () => { 
+    clearInterval(scoreClock);
+};
+
+// Resets score displays and game
+const resetGame = () => {
+    gameScore = 0;
+    isGameStart = true;
+    gameOver.style.display = "none";
+    player.style.left = "5rem";
+    scoreDisplay.innerText = "Score: " + 0;
+    obstacle.classList.add("moveObstacle");
 };
 
 // Event listeners

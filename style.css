@@ -59,7 +59,7 @@ body .screen-container .tv-screen .game-container #game-over {
   font-family: "Press Start 2P", cursive;
   font-size: 5rem;
   position: absolute;
-  top: 8rem;
+  top: 6rem;
   right: 6rem;
   z-index: 1;
   display: none;
@@ -164,7 +164,7 @@ body .screen-container .tv-screen #game-floor {
   z-index: -2;
   width: 32rem;
   height: 3rem;
-  position: absolute;
+  position: relative;
   left: 0.5rem;
   margin-top: 12rem;
   border-radius: 5rem;
@@ -194,21 +194,23 @@ body .screen-container .tv-screen #tutorial-screen #tutorial-screen__controls {
   right: 14rem;
 }
 
-@media only screen and (max-width: 368px) {
+@media only screen and (max-width: 500px) {
   #game-title {
     width: 55%;
     font-size: 0.75rem;
   }
-  #tv-screen {
+  .tv-screen {
+    background-image: none;
+    width: 60%;
+  }
+  .tv-screen .game-container {
+    width: 55%;
+    display: block;
+  }
+  .tv-screen .game-container #tutorial-screen {
     width: 55%;
   }
-  #tv-screen #game-container {
-    width: 55%;
-  }
-  #tv-screen #tutorial-screen {
-    width: 55% rem;
-  }
-  #tv-screen #game-floor {
+  .tv-screen .game-container #game-floor {
     width: 55%;
   }
 }/*# sourceMappingURL=style.css.map */
