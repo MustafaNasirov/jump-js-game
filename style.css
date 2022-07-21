@@ -194,13 +194,12 @@ body .screen-container .tv-screen #tutorial-screen #tutorial-screen__controls {
   right: 14rem;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 368px) {
   #game-title {
     width: 55%;
     font-size: 0.75rem;
   }
   .tv-screen {
-    background-image: none;
     width: 60%;
   }
   .tv-screen .game-container {
