@@ -3,7 +3,7 @@
 ## Description
 Platformer Live-Site: https://mustafanasirov.github.io/jump-js-game/
 
-A retro inspired chrome-dino 2D platformer with obstacles & Mega Man. Programmed using languages learned and  JavaScript, HTML, and SCSS. 
+A retro inspired chrome-dino 2D platformer with obstacles and Mega Man as the playable character. Programmed using languages learned in the _nology course, using JavaScript, HTML, and SCSS. Made responsive to screen size using mobile-first responsiveness and following appropriate naming & coding conventions.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/86935457/179026692-9fe5920a-3de5-434f-b23a-7e88303a6ef9.png">
