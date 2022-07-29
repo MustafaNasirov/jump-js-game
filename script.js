@@ -66,7 +66,7 @@ const checkCollision = setInterval(() => {
        // Stop score counter and terminate game
        gameOver.style.display = "block";
        isGameStart = false;
-       stopClock(score);
+       stopClock(scoreClock);
        removeObstacle();
        // alert("Game Over!");
     }
