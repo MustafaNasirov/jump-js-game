@@ -1,4 +1,4 @@
-# 2D Retro Platformer - inspired by Chrome's 'Dinosaur Game'
+# 2D Retro Platformer - inspired by Chrome's 'Dinosaur Game' :joystick:
 
 ## Description
 Platformer Live-Site: https://mustafanasirov.github.io/jump-js-game/
