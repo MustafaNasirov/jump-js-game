@@ -99,8 +99,9 @@ body{
                 #obstacle{
                     width: 2rem;
                     height: 5rem;
-                    background-color: $pixel-font-color;
-
+                    background-image: url("./assets/megaman-enemy.png");
+                    background-position: center;
+                    background-size: cover;
                     position: relative;
                     left: 32rem;
                     top: 12rem;
@@ -152,6 +153,35 @@ body{
                         bottom: 12rem;
                         right: 14rem;
                     }
+            }
+            
+            .joystick-container{
+                
+                #joystick{
+                    width: 15rem;
+                    height: 15rem;
+                    background-image: url("./assets/joystick1.png");
+                    background-position: center;
+                    background-size: cover;
+                    position: absolute;
+                    top: 15rem;
+                    left: 15rem;
+                    z-index: 6;
+                }
+
+                @keyframes moveJoystickLeft{
+                    0%{left: 92.5%;}
+                    100%{left: 1%;}
+                }
+
+                @keyframes moveJoystickRight{
+                    0%{left: 92.5%;}
+                    100%{left: 1%;}
+                }
+
+                .moveObstacle{
+                    animation: moveObstacle 2.5s linear infinite;
+                }
             }
         }   
     }

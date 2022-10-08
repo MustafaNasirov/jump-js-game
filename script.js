@@ -7,6 +7,7 @@ const jumpSFX = document.getElementById("jump-sfx-8bit")
 // DOM declarations
 const player = document.getElementById("player");
 const obstacle = document.getElementById("obstacle");
+const joystick = document.getElementById("joystick");
 const scoreDisplay = document.getElementById("game-score");
 const tutorialScreen = document.getElementById("tutorial-screen");
 const gameScreen = document.getElementsByClassName("game-container");
@@ -91,11 +92,15 @@ const handleKeyPress = (event) => {
     if (key == 'a') {
         //move left
         moveElement(player, -32);
+        joystick.style.backgroundImage = "url('./assets/joystick-left.png')";
+        setTimeout(() => joystick.style.backgroundImage = "url('./assets/joystick1.png')", 250);
         return;
     }
     if (key == 'd') {
         // move right
         moveElement(player, 32);
+        joystick.style.backgroundImage = "url('./assets/joystick-right.png')";
+        setTimeout(() => joystick.style.backgroundImage = "url('./assets/joystick1.png')", 250);
         return;
     }
 };

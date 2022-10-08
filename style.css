@@ -134,7 +134,9 @@ body .screen-container .tv-screen .game-container .animateJump {
 body .screen-container .tv-screen .game-container #obstacle {
   width: 2rem;
   height: 5rem;
-  background-color: green;
+  background-image: url("./assets/megaman-enemy.png");
+  background-position: center;
+  background-size: cover;
   position: relative;
   left: 32rem;
   top: 12rem;
@@ -192,6 +194,53 @@ body .screen-container .tv-screen #tutorial-screen #tutorial-screen__controls {
   font-size: 0.5rem;
   bottom: 12rem;
   right: 14rem;
+}
+body .screen-container .tv-screen .joystick-container #joystick {
+  width: 15rem;
+  height: 15rem;
+  background-image: url("./assets/joystick1.png");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 15rem;
+  left: 15rem;
+  z-index: 6;
+}
+@-webkit-keyframes moveJoystickLeft {
+  0% {
+    left: 92.5%;
+  }
+  100% {
+    left: 1%;
+  }
+}
+@keyframes moveJoystickLeft {
+  0% {
+    left: 92.5%;
+  }
+  100% {
+    left: 1%;
+  }
+}
+@-webkit-keyframes moveJoystickRight {
+  0% {
+    left: 92.5%;
+  }
+  100% {
+    left: 1%;
+  }
+}
+@keyframes moveJoystickRight {
+  0% {
+    left: 92.5%;
+  }
+  100% {
+    left: 1%;
+  }
+}
+body .screen-container .tv-screen .joystick-container .moveObstacle {
+  -webkit-animation: moveObstacle 2.5s linear infinite;
+          animation: moveObstacle 2.5s linear infinite;
 }
 
 @media only screen and (max-width: 368px) {
