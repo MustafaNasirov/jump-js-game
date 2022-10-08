@@ -6,23 +6,22 @@ Platformer Live-Site: https://mustafanasirov.github.io/jump-js-game/
 A retro inspired chrome-dino 2D platformer with obstacles and Mega Man as the playable character. Programmed using languages learned in the _nology course, using JavaScript, HTML, and SCSS. Made responsive to screen size using mobile-first responsiveness and following appropriate naming & coding conventions.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/86935457/179026692-9fe5920a-3de5-434f-b23a-7e88303a6ef9.png">
+  <img alt="MENU" src="https://user-images.githubusercontent.com/86935457/194715560-ed368cfd-a6db-4189-8f77-f00e57d4ccb0.png" width="640">
 </p>
 
 ## Gameplay
 - The player has the ability to move left, right and jump in the game environment.
 - 'A' and 'D' to move left & right, 'W' or Space to jump.
-
-<p align="center">
- <img src="https://user-images.githubusercontent.com/86935457/179027774-d0b190f0-7789-424e-9922-30b26554b248.png">
-</p>
-
 - An obstacle will continuously come at the player which will end the game if hit.
 - When 'Game Over', any key press will reset the game to it's original state and the game will restart.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/86935457/179027664-dc3f5dfe-00f7-49fc-adb9-8139d9b63844.png">
+  <img src="https://user-images.githubusercontent.com/86935457/194715389-06a40def-b471-4f28-a3ae-da6d2fbf299b.gif">
 </p
+
+
+
+
 
 ## Implementation
 - The movements and animations were made using keyframes and transitions triggered by events in the JavaScript. 
